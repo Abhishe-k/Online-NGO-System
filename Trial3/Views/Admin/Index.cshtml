@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "AdminControl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AdminControl</h2>
+<h1>Admin Page for all Tables</h1>
+<br />
+<br />
+<div class="container center-align flow-text">
+
+    <h3>@Html.ActionLink("User", "Index", "Users")</h3><br />
+    <h3>@Html.ActionLink("Event", "Index", "Events")</h3><br />
+    <h3>@Html.ActionLink("Items", "Index", "Items")</h3><br />
+    <h3>@Html.ActionLink("UserDonation", "Index", "UserDonations")</h3><br />
+    <h3>@Html.ActionLink("EventUser", "Index", "EventUsers")</h3><br />
+
+</div>
+

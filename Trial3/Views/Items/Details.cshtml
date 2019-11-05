@@ -1,0 +1,27 @@
+﻿@model Trial3.Models.Items
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Items</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemsName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

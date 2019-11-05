@@ -1,0 +1,48 @@
+﻿@model Trial3.Models.EventUser
+
+@{
+    ViewBag.Title = "getQuantity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Fill up</h2>
+
+@using (Html.BeginForm(FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                   @Html.Hidden("BasicHiddenName1", null, new { @id = "BasicHiddenName1" })
+                   @Html.HiddenFor(model => model.UserId, new { Value = ViewBag.UserId })
+             </div>
+        </div>
+
+        <div class="form-group">
+           <div class="col-md-10">
+                   @Html.Hidden("BasicHiddenName2", null, new { @id = "BasicHiddenName2" })
+                   @Html.HiddenFor(model => model.EventId, new { Value = ViewBag.EventId })
+           </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2", style = "font-size: 20px;color:black" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
